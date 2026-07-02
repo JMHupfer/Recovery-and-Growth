@@ -228,10 +228,11 @@ main h2 {
 
 .focus-card {
   padding: 1.1rem;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(19, 21, 26, 0.07);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.04);
   border-radius: 0.9rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.5);
+  color: var(--color-light);
 }
 
 .focus-card h3 {
@@ -249,10 +250,10 @@ main h2 {
 .card {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 32px rgba(2,6,23,0.55);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -270,7 +271,8 @@ main h2 {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.24s ease, filter 0.24s ease;
+  filter: brightness(0.86) saturate(1.02);
 }
 
 .card a:hover img,
@@ -280,7 +282,7 @@ main h2 {
 
 .card-body {
   padding: 1rem;
-  color: var(--color-black);
+  color: var(--color-light);
   flex: 1;
 }
 
@@ -359,9 +361,9 @@ main h2 {
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 1.2rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.82);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-radius: 1rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.5);
 }
 
 .contact-details {
@@ -454,9 +456,9 @@ main h2 {
 
 .subpage-content .intro,
 .subpage-content .section-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
   border-radius: 1rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.5);
   padding: 1.2rem 1.3rem;
   margin-bottom: 1rem;
 }
