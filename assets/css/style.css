@@ -97,11 +97,11 @@ img {
 .site-header {
   background: linear-gradient(135deg, var(--color-dark) 0%, #36404c 100%);
   color: var(--color-light);
-  padding: 3rem 1.5rem 2.5rem;
+  padding: 3.4rem 1.5rem 2.8rem;
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
   text-align: center;
 }
@@ -116,16 +116,18 @@ img {
 }
 
 .site-header h1 {
-  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
+  line-height: 1.2;
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .hero-copy {
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.8;
   color: #e6ebf2;
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto 1.5rem;
 }
 
@@ -163,19 +165,19 @@ img {
 }
 
 main section {
-  padding: 0 1.5rem 2rem;
+  padding: 0 1.5rem 2.4rem;
 }
 
 main h2 {
   text-align: center;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1rem;
   background: linear-gradient(135deg, var(--color-black), #2d313a);
   color: var(--color-light);
   text-transform: uppercase;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  border-radius: 0.6rem 0.6rem 0 0;
+  border-radius: 0.75rem 0.75rem 0 0;
 }
 
 .biography,
@@ -187,11 +189,11 @@ main h2 {
 }
 
 .biography p {
-  padding: 1.5rem;
+  padding: 1.6rem 1.8rem;
   font-size: clamp(1rem, 2vw, 1.15rem);
   line-height: 1.8;
   text-align: center;
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -234,8 +236,8 @@ main h2 {
 
 .card:hover,
 .card:focus-within {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 44px rgba(19, 21, 26, 0.16);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(19, 21, 26, 0.16);
 }
 
 .card a {
@@ -312,8 +314,8 @@ main h2 {
 }
 
 .path-card {
-  padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.88);
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(19, 21, 26, 0.07);
   border-radius: 1rem;
   box-shadow: var(--shadow);
