@@ -1,9 +1,15 @@
-# Challenge-02
-Second Bootcamp Challenge
+# Jacob M Hupfer Portfolio
 
-In this challenge I created a profile that has a functioning navigation bar that scrolls to each section in the webpage as well as a link to my CV. I made an about me section going over some small details of my life, a card section linking you to different projects that I have and will work on, and at the end I've included links to call me, email me, access my LinkedIn and Github profiles. 
+This repository contains a personal portfolio website for Jacob M Hupfer. The site reflects a more personal and current focus on recovery, writing, self-development, and ongoing growth as a developer and creator.
 
-The purpose of this challenge is to set up an online portfolio for the bootcamp giving employers into insight into what I am working on and how I code. This website can be used to navigate my potential employment options, that is, give employers an idea of who I am and what I am capable of accomplishing. 
+## What’s included
+- A polished landing page with a personal introduction
+- Sections for current focus, projects, resume, writing, and contact
+- A working contact form that submits messages directly
+- Responsive styling for desktop and mobile devices
 
-My launched web application is:
-https://jmhupfer.github.io/Challenge-02/ 
+## Live site
+https://jmhupfer.github.io/Jakes-First-Portfolio/
+
+## Project notes
+This site was built as a simple static website using HTML and CSS, with a small bit of JavaScript for the contact form and reveal-on-scroll interactions.
