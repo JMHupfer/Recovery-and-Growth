@@ -360,14 +360,24 @@ main h2 {
   min-height: 1.25rem;
   font-size: 0.95rem;
   color: var(--color-dark);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .form-status.success {
   color: #1f7a43;
+  transform: translateY(-2px);
+  animation: pulse-success 0.6s ease;
 }
 
 .form-status.error {
   color: #b00020;
+  transform: translateY(-2px);
+}
+
+@keyframes pulse-success {
+  0% { transform: scale(0.98); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
 }
 
 .site-footer {
