@@ -151,10 +151,11 @@ img {
 }
 
 .hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: none;
+}
+
+.site-header .button {
+  display: none !important;
 }
 
 .button {
