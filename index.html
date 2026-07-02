@@ -23,11 +23,19 @@
 
     <div class="page-content">
         <header class="site-header">
-            <h1>The Work of Jacob M Hupfer</h1>
+            <div class="hero-content">
+                <p class="eyebrow">Returning to software</p>
+                <h1>The Work of Jacob M Hupfer</h1>
+                <p class="hero-copy">I’m rebuilding my developer practice through independent projects, thoughtful product work, and a steady push toward modern web and AI-era tools.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#projects">See projects</a>
+                    <a class="button secondary" href="#call-me">Say hello</a>
+                </div>
+            </div>
         </header>
 
         <main>
-            <section class="biography">
+            <section class="biography fade-in">
                 <h2 id="bio">About Me</h2>
                 <p>
                     My name is Jake. I'm a 2019 graduate of the University of Texas at El Paso with a degree in International
@@ -40,7 +48,25 @@
                 </p>
             </section>
 
-            <section class="projects">
+            <section class="focus-section fade-in">
+                <h2 id="focus">Current Focus</h2>
+                <div class="focus-grid">
+                    <article class="focus-card">
+                        <h3>Web fundamentals</h3>
+                        <p>Refining HTML, CSS, and JavaScript so the basics feel solid again.</p>
+                    </article>
+                    <article class="focus-card">
+                        <h3>Modern tooling</h3>
+                        <p>Exploring frameworks and workflow habits that make projects easier to ship.</p>
+                    </article>
+                    <article class="focus-card">
+                        <h3>Practical AI</h3>
+                        <p>Learning how to use AI thoughtfully in real workflows instead of treating it like magic.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="projects fade-in">
                 <h2 id="projects">Projects</h2>
                 <div class="project-grid">
                     <article class="card">
@@ -49,8 +75,7 @@
                         </a>
                         <div class="card-body">
                             <h3>Portfolio</h3>
-                            <p>Novice developers attempt at getting his name out into the world to see what opportunities
-                                present themselves, please judge with kindness</p>
+                            <p>My first public portfolio project, built to share my work and start the conversation.</p>
                         </div>
                     </article>
 
@@ -60,62 +85,62 @@
                         </a>
                         <div class="card-body">
                             <h3>Horiseon (Challenge-One)</h3>
-                            <p>Cleaned up code with semantic HTML while adding alt attributes for accessibility</p>
+                            <p>Cleaned up code with semantic HTML while adding alt attributes for accessibility.</p>
                         </div>
                     </article>
 
                     <article class="card">
                         <img src="assets/images/black-and-white-city.jpg" alt="Placeholder for upcoming project">
                         <div class="card-body">
-                            <h3>TBA</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quam nostrum maiores recusandae
-                                repudiandae ipsa qui debitis labore rerum praesentium blanditiis earum mollitia consequuntur
-                                molestias provident, enim quibusdam, adipisci quisquam?</p>
+                            <h3>Coming soon</h3>
+                            <p>New work is on the way as I rebuild momentum and turn ideas into polished builds.</p>
                         </div>
                     </article>
 
                     <article class="card">
                         <img src="assets/images/black-and-white-city.jpg" alt="Placeholder for upcoming project">
                         <div class="card-body">
-                            <h3>TBA</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, minus sunt? Laboriosam,
-                                assumenda? Adipisci ut, saepe ab magni omnis quo dolorum impedit laborum qui. Ex ducimus
-                                molestiae dignissimos aspernatur voluptate.</p>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="assets/images/black-and-white-city.jpg" alt="Placeholder for upcoming project">
-                        <div class="card-body">
-                            <h3>TBA</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, voluptate quia? Tenetur
-                                saepe molestias cumque distinctio quod repudiandae totam eius aliquam ea, labore provident.
-                                Minima maiores cum sed laborum. Quaerat?</p>
+                            <h3>Coming soon</h3>
+                            <p>More projects will be added as I keep practicing and putting finished work online.</p>
                         </div>
                     </article>
                 </div>
             </section>
 
-            <section class="resume-section">
+            <section class="resume-section fade-in">
                 <h2 id="resume">Resume</h2>
-                <p>Updated resume coming soon. In the meantime, connect with me via email or LinkedIn below.</p>
+                <p>Updated resume coming soon. In the meantime, connect with me via email or GitHub below.</p>
             </section>
 
-            <section class="contacts">
+            <section class="contacts fade-in">
                 <h2 id="call-me">Contact</h2>
                 <ul class="contact-links">
                     <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+19158736555">(915) 873-6555</a></li>
                     <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:jacobhupfer@gmail.com">jacobhupfer@gmail.com</a></li>
                     <li><i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/JMHupfer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                    <li><i class="fa fa-linkedin-square" aria-hidden="true"></i><a href="https://www.linkedin.com/in/jacob-hupfer-391506184/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                 </ul>
             </section>
         </main>
 
         <footer class="site-footer">
-            <p>&copy; 2026 Jacob M Hupfer</p>
+            <p>&copy; <span id="year"></span> Jacob M Hupfer</p>
         </footer>
     </div>
+
+    <script>
+        const reveals = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        reveals.forEach((element) => observer.observe(element));
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
