@@ -70,11 +70,19 @@ img {
 
 .navbar-items a {
   color: var(--color-light);
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
 }
 
 .navbar-items a:hover,
 .navbar-items a:focus-visible {
+  color: #fff;
+  border-bottom: 2px solid var(--color-light);
+}
+
+.navbar-items a.active {
+  background-color: rgba(255, 255, 255, 0.12);
   color: #fff;
   border-bottom: 2px solid var(--color-light);
 }
