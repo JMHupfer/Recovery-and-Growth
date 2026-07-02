@@ -18,7 +18,7 @@
             <li><a href="#projects">Work</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="writing.html">Writing</a></li>
-            <li><a href="#call-me">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -124,43 +124,6 @@
                 </div>
             </section>
 
-            <section class="resume-section fade-in">
-                <h2 id="resume">Resume</h2>
-                <p>Updated resume coming soon. In the meantime, connect with me via email or GitHub below.</p>
-            </section>
-
-            <section class="contacts fade-in">
-                <h2 id="call-me">Contact</h2>
-                <div class="contact-shell">
-                    <div class="contact-details">
-                        <p class="contact-intro">If you’d like to connect, leave a note below and I’ll get back to you.</p>
-                        <ul class="contact-links">
-                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:jacobhupfer@gmail.com">jacobhupfer@gmail.com</a></li>
-                            <li><i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/JMHupfer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                        </ul>
-                    </div>
-
-                    <form class="contact-form" id="contact-form" novalidate>
-                        <div class="form-row">
-                            <label for="name">Name</label>
-                            <input id="name" name="name" type="text" required autocomplete="name">
-                        </div>
-
-                        <div class="form-row">
-                            <label for="email">Your email</label>
-                            <input id="email" name="email" type="email" required autocomplete="email">
-                        </div>
-
-                        <div class="form-row">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-
-                        <button class="button primary" type="submit">Send message</button>
-                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-                    </form>
-                </div>
-            </section>
         </main>
 
         <footer class="site-footer">
@@ -182,48 +145,6 @@
         reveals.forEach((element) => observer.observe(element));
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        const form = document.getElementById('contact-form');
-        const statusMessage = document.getElementById('form-status');
-
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const senderEmail = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (!name || !senderEmail || !message) {
-                statusMessage.textContent = 'Please fill in each field before sending.';
-                statusMessage.className = 'form-status error';
-                return;
-            }
-
-            statusMessage.textContent = 'Sending your message...';
-            statusMessage.className = 'form-status';
-
-            const formData = new FormData(form);
-            formData.set('_subject', `Portfolio contact from ${name}`);
-            formData.set('_captcha', 'false');
-            formData.set('_template', 'table');
-
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/jacobhupfer@gmail.com', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (!response.ok) {
-                    throw new Error('Unable to send message');
-                }
-
-                form.reset();
-                statusMessage.textContent = 'Thanks! Your message has been sent.';
-                statusMessage.className = 'form-status success';
-            } catch (error) {
-                statusMessage.textContent = 'Sorry, that did not go through. Please email me directly instead.';
-                statusMessage.className = 'form-status error';
-            }
-        });
     </script>
 </body>
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Jacob M Hupfer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar" aria-label="Main navigation">
+        <img src="assets/images/Profile Photo.jpg" alt="Jacob M Hupfer" width="230" height="300">
+        <ul class="navbar-items">
+            <li><a href="index.html#bio">About</a></li>
+            <li><a href="index.html#projects">Work</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-content">
+        <header class="site-header subpage-hero">
+            <div class="hero-content">
+                <p class="eyebrow">Get in touch</p>
+                <h1>Contact</h1>
+                <p class="hero-copy">If you’d like to connect, leave a note below and I’ll get back to you.</p>
+            </div>
+        </header>
+
+        <main class="subpage-content">
+            <section class="contact-shell">
+                <div class="contact-details">
+                    <p class="contact-intro">I’m happy to hear from people interested in writing, development, recovery, or thoughtful conversations about growth.</p>
+                    <ul class="contact-links">
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:jacobhupfer@gmail.com">jacobhupfer@gmail.com</a></li>
+                        <li><i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/JMHupfer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-row">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" required autocomplete="name">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Your email</label>
+                        <input id="email" name="email" type="email" required autocomplete="email">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button class="button primary" type="submit">Send message</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Jacob M Hupfer</p>
+        </footer>
+    </div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const statusMessage = document.getElementById('form-status');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const senderEmail = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !senderEmail || !message) {
+                statusMessage.textContent = 'Please fill in each field before sending.';
+                statusMessage.className = 'form-status error';
+                return;
+            }
+
+            statusMessage.textContent = 'Sending your message...';
+            statusMessage.className = 'form-status';
+
+            const formData = new FormData(form);
+            formData.set('_subject', `Portfolio contact from ${name}`);
+            formData.set('_captcha', 'false');
+            formData.set('_template', 'table');
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/jacobhupfer@gmail.com', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Unable to send message');
+                }
+
+                form.reset();
+                statusMessage.textContent = 'Thanks! Your message has been sent.';
+                statusMessage.className = 'form-status success';
+            } catch (error) {
+                statusMessage.textContent = 'Sorry, that did not go through. Please email me directly instead.';
+                statusMessage.className = 'form-status error';
+            }
+        });
+    </script>
+</body>
+</html>
