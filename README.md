@@ -10,7 +10,7 @@ This repository contains a developer-focused portfolio for Jacob M Hupfer. The s
 - A lightweight reveal-on-scroll animation and accessible layout
 
 ## Live site
-https://jmhupfer.github.io/Jakes-First-Portfolio/
+https://jmhupfer.github.io/Recovery-and-Growth/
 
 ## Development
 To preview locally, run a simple static server from the project root (Python 3):
